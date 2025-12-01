@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSLC application form</title>
+  </head>
+  <body>
+    <h1>SSLC Application Form</h1>
+    <table>
+      <form action="success.html">
+        <tr>
+          <td><label for="name">Full Name:</label></td>
+          <td>
+            <input type="text" id="name" name="name" required />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="dob">Date of Birth:</label>
+          </td>
+          <td>
+            <input type="date" id="dob" name="dob" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="address">Address:</label></td>
+          <td>
+            <textarea
+              id="address"
+              name="address"
+              rows="4"
+              cols="50"
+              required
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="school">School Name:</label></td>
+          <td><input type="text" id="school" name="school" required /></td>
+        </tr>
+        <tr>
+          <td><label for="year">Year of Passing:</label></td>
+          <td>
+            <input
+              type="number"
+              id="year"
+              name="year"
+              min="1900"
+              max="2100"
+              required
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><input type="submit" value="Submit Application" /></td>
+        </tr>
+      </form>
+    </table>
+  </body>
+</html>
