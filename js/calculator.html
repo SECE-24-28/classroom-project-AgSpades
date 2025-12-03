@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Calculator</title>
+  </head>
+  <body>
+    <h1>A Calculator</h1>
+    <label for="n1">Enter first number:</label><input type="number" id="n1" />
+    <br />
+    <label for="n2">Enter second number:</label><input type="number" id="n2" />
+    <br />
+    <label for="result">Result:</label><input type="number" id="result" />
+    <br />
+    <button id="add">Add</button>
+    <button id="subtract">Subtract</button>
+    <button id="multiply">Multiply</button>
+    <button id="divide">Divide</button>
+    <script>
+      const n1 = document.getElementById("n1");
+      const n2 = document.getElementById("n2");
+      const result = document.getElementById("result");
+
+      document.getElementById("add").onclick = function () {
+        result.value = parseFloat(n1.value) + parseFloat(n2.value);
+      };
+
+      document.getElementById("subtract").onclick = function () {
+        result.value = parseFloat(n1.value) - parseFloat(n2.value);
+      };
+
+      document.getElementById("multiply").onclick = function () {
+        result.value = parseFloat(n1.value) * parseFloat(n2.value);
+      };
+
+      document.getElementById("divide").onclick = function () {
+        if (parseFloat(n2.value) !== 0) {
+          result.value = parseFloat(n1.value) / parseFloat(n2.value);
+        } else {
+          alert("Cannot divide by zero");
+        }
+      };
+    </script>
+  </body>
+</html>
