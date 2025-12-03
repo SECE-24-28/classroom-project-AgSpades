@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox Footer</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+
+    .footer {
+      background: #222;
+      color: white;
+      padding: 40px 20px;
+
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap; /* Important for small screens */
+    }
+
+    .footer .column {
+      flex: 1;          /* equal width */
+      min-width: 200px; /* controls when they wrap */
+    }
+
+    .footer h3 {
+      margin-top: 0;
+    }
+
+    .footer a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+
+    .footer a:hover {
+      color: #00d4ff;
+    }
+  </style>
+</head>
+<body>
+
+  <footer class="footer">
+    <div class="column">
+      <h3>About Us</h3>
+      <p>We provide high-quality web development resources for beginners.</p>
+    </div>
+
+    <div class="column">
+      <h3>Quick Links</h3>
+      <a href="#">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">Courses</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="column">
+      <h3>Follow Us</h3>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+</body>
+</html>

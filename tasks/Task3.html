@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox Navbar</title>
+
+  <style>
+    body 
+    {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar container */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Important for mobile */
+      padding: 15px 20px;
+      background: #333;
+      color: white;
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Menu items container */
+    .menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .menu a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    .menu a:hover {
+      color: #00d4ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">MySite</div>
+
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+</body>
+</html>

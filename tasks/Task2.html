@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Flexbox Section</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+
+    .section {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap; /* Makes it responsive */
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section img {
+      width: 300px;
+      border-radius: 10px;
+
+    }
+
+    .section .text {
+      flex: 1; /* Text expands to fill space */
+    }
+
+    .section h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Responsive Image & Text (Flexbox)</h1>
+
+  <div class="section">
+    <img src="Coffee.png" alt="Sample Image">
+    
+    <div class="text">
+      <h2>Flexbox Responsive Layout</h2>
+      <p>
+        This layout places the image and the text side by side on large screens.
+        On mobile screens, they automatically stack on top of each other.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
