@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="text">Peacock</h1>
+    <button onclick="change()">Change Text</button>
+    <script>
+      let changed = false;
+      function change() {
+        let h = document.getElementById("text");
+        if (changed == false) {
+          h.innerHTML = "Peacock is our national bird";
+          changed = true;
+        } else if (changed) {
+          h.innerHTML = "Peacock";
+          changed = false;
+        }
+      }
+    </script>
+  </body>
+</html>
