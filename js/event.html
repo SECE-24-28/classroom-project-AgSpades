@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="press">Click for a free gift!</button>
+    <script>
+      let a = document.getElementById("press");
+
+      a.addEventListener("click", () => {
+        let num = Math.floor(Math.random() * 11);
+        if (num % 2 == 0) {
+          alert("You're lucky! Gift for you!!");
+        } else {
+          alert("No gift for you! Try again!!");
+        }
+      });
+    </script>
+  </body>
+</html>
