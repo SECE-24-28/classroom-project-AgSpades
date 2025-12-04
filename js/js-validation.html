@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <p id="error" style="color: red"></p>
+      <label for="username">User Name: </label>
+      <input type="text" id="user" />
+      <label for="email">Email: </label>
+      <input type="text" id="email" />
+      <button type="submit" id="submit">Submit</button>
+    </form>
+    <script>
+      let error = document.getElementById("error");
+      let user = document.getElementById("user");
+      let email = document.getElementById("email");
+      let sbtn = document.getElementById("submit");
+      sbtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (user.value === "" || email.value === "") {
+          error.innerText = "Please fill all the fields";
+          return;
+        } else {
+          
+          error.innerText = "";
+          alert("Form submitted successfully!");
+        }
+      });
+    </script>
+  </body>
+</html>
