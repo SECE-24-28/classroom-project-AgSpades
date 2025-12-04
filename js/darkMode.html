@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dark Mode</title>
+    <style>
+      .dark-mode {
+        color: aliceblue;
+        background-color: black;
+      }
+      .light-mode {
+        color: black;
+        background-color: white;
+      }
+    </style>
   </head>
-  <body id="main">
+  <body id="main" class="light-mode">
     <h1 id="text">Light Mode</h1>
     <button id="toggle">Toggle Dark Mode</button>
     <script>
@@ -14,14 +24,10 @@
       const text = document.getElementById("text");
 
       toggle.addEventListener("click", () => {
-        if (main.style.backgroundColor === "black") {
-          main.style.backgroundColor = "white";
-          text.innerText = "Light Mode";
-          text.style.color = "black";
+        if (main.className === "light-mode") {
+          main.className = "dark-mode";
         } else {
-          main.style.backgroundColor = "black";
-          text.style.color = "white";
-          text.innerText = "Dark Mode";
+          main.className = "light-mode";
         }
       });
     </script>
