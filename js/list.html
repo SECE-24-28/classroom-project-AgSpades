@@ -12,17 +12,22 @@
       >
         Add
       </button>
+      <button id="clear">Clear</button>
     </main>
     <script>
       let main = document.getElementById("main");
       let btn = document.getElementById("submit");
       let ol = document.createElement("ol");
+      let cl = document.getElementById("clear");
       main.appendChild(ol);
       btn.addEventListener("click", () => {
         let content = document.getElementById("content").value;
         let li = document.createElement("li");
         li.innerHTML = content;
         ol.appendChild(li);
+      });
+      cl.addEventListener("click", () => {
+        main.removeChild(ol);
       });
     </script>
   </body>
