@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy & Paste</title>
+  </head>
+  <body>
+    <input type="text" name="copybox" id="copy" />
+    <input type="text" name="pastebox" id="paste" readonly />
+    <script>
+      const copyBox = document.getElementById("copy");
+      const pasteBox = document.getElementById("paste");
+
+      copyBox.addEventListener("input", () => {
+        // keyup can also be used for event listening
+        pasteBox.value = copyBox.value;
+      });
+    </script>
+  </body>
+</html>
