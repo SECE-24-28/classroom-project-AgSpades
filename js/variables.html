@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="pa"></p>
+    <script>
+      let student = {
+        name: "Saumyajit P.",
+        city: "Coimbatore",
+        age: 20,
+        email: "mail@saumyajit.dev",
+      };
+      const para = document.getElementById("pa");
+      //   para.innerText = `Name: ${student.name}, City: ${student.city}, Age: ${student.age}, Email: ${student.email}`;
+      para.innerHTML = `
+        <ul>
+            <li>Name: ${student.name}</li>
+            <li>City: ${student.city}</li>
+            <li>Age: ${student.age}</li>
+            <li>Email: ${student.email}</li>
+        </ul>
+    `;
+    </script>
+  </body>
+</html>
