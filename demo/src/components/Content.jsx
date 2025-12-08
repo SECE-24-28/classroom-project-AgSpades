@@ -1,11 +1,23 @@
+import { useState } from "react";
+
 function Content() {
 
+    let [count, setCount] = useState(0);
+
+    const increase = () => {
+        setCount(count + 1);
+    }
+    const decrease = () => {
+        setCount(count - 1);
+    }
     return (
         <>
-            <h2> Lorem Lorem</h2>
+            <h2> Counter</h2>
             <p className="content">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque similique laudantium iusto beatae delectus cum, fugit optio odit ratione recusandae aliquam labore harum cumque corporis voluptatum voluptatem fuga voluptas ipsa!
+                {count}
             </p>
+            <button onClick={increase}>+</button>
+            <button onClick={decrease}>-</button>
         </>
     );
 }
