@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 function App() {
 
   const press = () => {
@@ -7,8 +8,7 @@ function App() {
   }
   return (
     <>
-      <h1>Hello React!</h1>
-      <button onClick={press}>Student</button>
+      <Header></Header>
     </>
   )
 }
