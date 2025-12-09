@@ -1,42 +1,45 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import './App.css'
+import { DataProvider } from './context/DataContext'
+import AOne from './components/AOne';
+import BOne from './components/BOne';
+import DataContext from './context/DataContext';
 
-function App() {
-  const [list, setList] = useState([
-    { id: 1, sname: "Vinoth", fee: true },
-    { id: 2, sname: "Shiva", fee: false },
-    { id: 3, sname: "Harish", fee: true },
-    { id: 4, sname: "David", fee: false }
-  ]);
+function NameChanger() {
+  const [newName, setNewName] = useState('');
+  const { setName } = useContext(DataContext);
 
-  const handleDelete = (id) => {
-    const newList = list.filter((ls) => ls.id != id)
-    setList(newList)
+  const handleChangeName = () => {
+    if (newName.trim()) {
+      setName(newName);
+      setNewName('');
+    }
   }
-  const handleCheck = (id) => {
-    const newList = list.map((ls) => (ls.id === id) ? ({ ...ls, fee: !ls.fee }) : (ls))
-    setList(newList)
-  }
+
   return (
     <>
-      <h1>Students List</h1>
-      <hr />
-      <ul>
-        {
-          list.map((ls) =>
-            <li key={ls.id}>
-              <input type="checkbox" checked={ls.fee}
-                onChange={() => handleCheck(ls.id)} />
-              <label>{ls.sname}</label>
-              <button onClick={() => handleDelete(ls.id)}>Delete</button>
-            </li>
-          )
-        }
-      </ul>
+      <input
+        type="text"
+        value={newName}
+        onChange={(e) => setNewName(e.target.value)}
+      />
+      <input
+        type="button"
+        value="Change Name"
+        onClick={handleChangeName}
+      />
+      <AOne />
+      <BOne />
+    </>
+  );
+}
 
-      <br /><br />
-
-      <p>Student count : {list.length}</p>
+function App() {
+  return (
+    <>
+      <DataProvider>
+        <NameChanger />
+      </DataProvider>
     </>
   )
 }
