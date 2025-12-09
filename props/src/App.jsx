@@ -5,7 +5,8 @@ function App() {
   const [list, setList] = useState([
     { id: 1, sname: "Vinoth", fee: true },
     { id: 2, sname: "Shiva", fee: false },
-    { id: 3, sname: "Harish", fee: true }
+    { id: 3, sname: "Harish", fee: true },
+    { id: 4, sname: "David", fee: false }
   ]);
 
   const handleDelete = (id) => {
