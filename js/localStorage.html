@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local Storage Test</title>
+  </head>
+  <body>
+    <h2>Save to Local Storage</h2>
+
+    <label>Name:</label>
+    <input type="text" id="nameInput" /><br /><br />
+
+    <label>Email:</label>
+    <input type="text" id="emailInput" /><br /><br />
+
+    <button id="saveBtn">Save</button>
+
+    <script>
+      document.getElementById("saveBtn").onclick = function () {
+        let name = document.getElementById("nameInput").value;
+        let email = document.getElementById("emailInput").value;
+
+        if (name.trim() === "" || email.trim() === "") {
+          alert("Please fill both fields");
+          return;
+        }
+
+        localStorage.setItem("user_name", name);
+        localStorage.setItem("user_email", email);
+
+        alert("Saved to Local Storage!");
+      };
+    </script>
+  </body>
+</html>
