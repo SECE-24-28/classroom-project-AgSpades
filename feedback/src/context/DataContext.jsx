@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import api from "../api/Post";
+import { useNavigate } from "react-router-dom";
 
 const DataContext = createContext();
 
@@ -26,20 +27,34 @@ export const DataProvider = ({ children }) => {
     setSearchResult(result);
   }, [search, posts]);
 
+  const nav = useNavigate();
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    try {
+      e.preventDefault();
 
-    const newObj = {
-      id: posts.length + 1,
-      title,
-      body,
-    };
+      const newObj = {
+        id: posts.length + 1,
+        title,
+        body,
+      };
 
-    await api.post("/feedback", newObj);
+      await api.post("/feedback", newObj);
 
-    setTitle("");
-    setBody("");
-    fetchData();
+      setTitle("");
+      setBody("");
+      setPosts((prevPosts) => [...prevPosts, newObj]);
+      nav("/");
+      fetchData();
+      alert("Post added successfully!");
+    }
+    catch (error) {
+      console.error("Error adding post:", error);
+      alert("Failed to add post. Please try again.");
+      setTitle("");
+      setBody("");
+      nav("/");
+      fetchData();
+    }
   };
 
   return (
