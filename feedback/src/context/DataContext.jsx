@@ -28,12 +28,44 @@ export const DataProvider = ({ children }) => {
   }, [search, posts]);
 
 
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/feedback/${id}`);
+      const newPosts = posts.filter((post) => post.id !== id);
+      setPosts(newPosts);
+      alert("Post deleted successfully!");
+      nav("/");
+    }
+    catch (error) {
+      console.error("Error deleting post:", error);
+      alert("Failed to delete post. Please try again.");
+      nav("/");
+    }
+  }
+
+  const handleEditSubmit = async (id, updatedTitle, updatedBody) => {
+    try {
+      const updatedPost = { id: id, title: updatedTitle, body: updatedBody };
+      await api.put(`/feedback/${id}`, updatedPost);
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === id ? { ...post, ...updatedPost } : post
+        )
+      );
+      alert("Post updated successfully!");
+      nav("/");
+    } catch (error) {
+      console.error("Error updating post:", error);
+      alert("Failed to update post. Please try again.");
+      nav("/");
+    }
+  }
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
 
       const newObj = {
-        id: posts.length + 1,
+        id: (posts.length + 1).toString(),
         title,
         body,
       };
@@ -71,6 +103,8 @@ export const DataProvider = ({ children }) => {
         body,
         setBody,
         handleSubmit,
+        handleDelete,
+        handleEditSubmit
       }}
     >
       {children}
