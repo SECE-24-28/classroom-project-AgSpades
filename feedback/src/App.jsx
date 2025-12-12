@@ -1,6 +1,7 @@
 import './App.css'
 import Home from './component/Home'
 import Search from './component/Search';
+import EditPost from './component/EditPost';
 import AddPost from './component/AddPost';
 import { Route, Routes, Link } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/newpost" element={<AddPost />} />
+          <Route path="/edit/:id" element={<EditPost />} />
         </Routes>
       </DataProvider>
     </>
