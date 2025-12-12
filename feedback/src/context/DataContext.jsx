@@ -10,7 +10,7 @@ export const DataProvider = ({ children }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-
+  const nav = useNavigate();
   const fetchData = async () => {
     const res = await api.get("/feedback");
     setPosts(res.data);
@@ -27,7 +27,7 @@ export const DataProvider = ({ children }) => {
     setSearchResult(result);
   }, [search, posts]);
 
-  const nav = useNavigate();
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();

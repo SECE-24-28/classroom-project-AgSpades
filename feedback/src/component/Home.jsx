@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { DataContext } from '../context/DataContext.jsx'
-import Search from './Search.jsx'
+// import Search from './Search.jsx'
+import { Link } from 'react-router-dom'
 const Home = () => {
   const { posts } = useContext(DataContext)
   return (
@@ -9,8 +10,10 @@ const Home = () => {
       {
         posts.map((post) =>
           <div key={post.id}>
+
             <h3>{post.id}</h3>
-            <h4>{post.title}</h4>
+            <Link to={`/post/${post.id}`}>{post.title}</Link>
+
             <p>{post.body}</p>
             <hr />
           </div>
