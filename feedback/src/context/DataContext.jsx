@@ -13,7 +13,7 @@ export const DataProvider = ({ children }) => {
   const nav = useNavigate();
   const fetchData = async () => {
     const res = await api.get("/feedback");
-    setPosts(res.data);
+    setPosts(res.data.reverse());
   };
 
   useEffect(() => {
