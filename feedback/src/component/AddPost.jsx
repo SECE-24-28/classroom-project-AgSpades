@@ -1,11 +1,9 @@
-import { useState , useContext} from 'react'
-import React, { use } from 'react'
+import { useContext} from 'react'
 import { DataContext } from '../context/DataContext'
-import api from '../api/Post'
 
 const AddPost = () => {
 
-  const {posts, fetchData, title, setTitle, body, setBody, handleSubmit}=useContext(DataContext)
+  const { title, setTitle, body, setBody, handleSubmit}=useContext(DataContext)
 
   return (
     <div>
