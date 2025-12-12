@@ -65,7 +65,7 @@ export const DataProvider = ({ children }) => {
       e.preventDefault();
 
       const newObj = {
-        id: (posts.length + 1).toString(),
+        id: (Number(posts[0].id) + 1).toString(),
         title,
         body,
       };
