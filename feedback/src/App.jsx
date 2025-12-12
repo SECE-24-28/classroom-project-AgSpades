@@ -9,11 +9,14 @@ import { DataProvider } from './context/DataContext';
 function App() {
   return (
     <>
-      <ol>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/search">Search</Link></li>
-        <li><Link to="/newpost">NewPost</Link></li>
-      </ol>
+      <nav>
+        <ol>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/search">Search</Link></li>
+          <li><Link to="/newpost">NewPost</Link></li>
+        </ol>
+      </nav>
+
       <DataProvider>
         <Routes>
           <Route path="/" element={<Home />} />
