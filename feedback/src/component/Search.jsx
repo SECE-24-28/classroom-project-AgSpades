@@ -12,7 +12,6 @@ const Search = () => {
         (search ? searchResult : posts).map((post) =>
           <div key={post.id}>
             <h3>{post.id}</h3>
-            <h3>{post.id}</h3>
             <Link to={`/post/${post.id}`}>{post.title}</Link>
 
             <p>{post.body}</p>
