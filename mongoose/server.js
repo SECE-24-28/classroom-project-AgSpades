@@ -57,6 +57,22 @@ app.post("/api/courses", async (req, res) => {
   }
 });
 
+app.put("/api/course/:id", async (req, res) => {
+  try {
+    const updatedCourse = await myCourse.model.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true } // to return the updated document
+    );
+    if (!updatedCourse) {
+      return res.status(404).json({ error: "Course not found" });
+    }
+    res.json(updatedCourse);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
