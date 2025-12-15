@@ -20,7 +20,7 @@ export default function Form() {
       console.error('Error creating course:', error);
     }
   };
-  
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -31,18 +31,19 @@ export default function Form() {
             id="courseName"
             name="courseName"
             value={courseName}
-            onChange={(e) => setCourseName(e.target.value)}
+            onChange={(e) => setCourseName(e.target.value.trim())}
           />
         </div>
         <br />
         <div>
           <label htmlFor="courseDescription">Course Duration:</label>
-          <textarea
+          <input
+            type="text"
             id="courseDuration"
             name="courseDuration"
             value={courseDuration}
-            onChange={(e) => setCourseDuration(e.target.value)}
-          ></textarea>
+            onChange={(e) => setCourseDuration(e.target.value.trim())}
+          ></input>
         </div>
         <br />
         <button type="submit">Submit</button>

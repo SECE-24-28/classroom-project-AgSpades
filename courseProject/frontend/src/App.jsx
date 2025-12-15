@@ -5,8 +5,10 @@ function App() {
 
   return (
     <>
-      <Form />
-      <CoursesList />
+      <main>
+        <Form />
+        <CoursesList />
+      </main>
     </>
   )
 }

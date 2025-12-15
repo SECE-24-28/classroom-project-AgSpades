@@ -23,7 +23,7 @@ function CoursesList() {
                 courses.map((course, index) => (
                     <li key={index}>
                         <h3>{course.title}</h3>
-                        <p>{course.description}</p>
+                        <p>{course.duration}</p>
                     </li>
                 ))
             }
