@@ -1,11 +1,12 @@
+import Form from './components/Form.jsx'
+import CoursesList from './components/CoursesList.jsx'
 
 function App() {
 
   return (
     <>
-      <h1>
-        Welcome to the Course Project Frontend!
-      </h1>
+      <Form />
+      <CoursesList />
     </>
   )
 }
