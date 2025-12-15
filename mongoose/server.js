@@ -10,7 +10,8 @@ const PORT = 8080;
 app.use(cors());
 app.use(express.json());
 
-const mongoURI = "mongodb://myuser:mypassword@localhost:27017/courses?authSource=admin";
+const mongoURI =
+  "mongodb://myuser:mypassword@localhost:27017/courses?authSource=admin";
 
 mongoose
   .connect(mongoURI)
@@ -29,6 +30,18 @@ app.get("/api/courses", async (req, res) => {
   try {
     const courses = await myCourse.model.find();
     res.json(courses);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/api/course/:id", async (req, res) => {
+  try {
+    const course = await myCourse.model.findById(req.params.id);
+    if (!course) {
+      return res.status(404).json({ error: "Course not found" });
+    }
+    res.json(course);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
