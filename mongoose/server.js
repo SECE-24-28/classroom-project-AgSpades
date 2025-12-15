@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
   res.send("Api is working!");
 });
 
+// GET method for all courses
 app.get("/api/courses", async (req, res) => {
   try {
     const courses = await myCourse.model.find();
@@ -35,6 +36,7 @@ app.get("/api/courses", async (req, res) => {
   }
 });
 
+// GET method for a specific course by ID
 app.get("/api/courses/:id", async (req, res) => {
   try {
     const course = await myCourse.model.findById(req.params.id);
@@ -47,6 +49,7 @@ app.get("/api/courses/:id", async (req, res) => {
   }
 });
 
+// POST method to create a new course
 app.post("/api/courses", async (req, res) => {
   try {
     const newCourse = new myCourse.model(req.body);
@@ -57,6 +60,7 @@ app.post("/api/courses", async (req, res) => {
   }
 });
 
+// PUT method to update an existing course by ID
 app.put("/api/courses/:id", async (req, res) => {
   try {
     const updatedCourse = await myCourse.model.findByIdAndUpdate(
@@ -73,6 +77,7 @@ app.put("/api/courses/:id", async (req, res) => {
   }
 });
 
+// DELETE method to remove a course by ID
 app.delete("/api/courses/:id", async (req, res) => {
   try {
     const deletedCourse = await myCourse.model.findByIdAndDelete(req.params.id);
