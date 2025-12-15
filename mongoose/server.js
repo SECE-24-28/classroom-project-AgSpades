@@ -35,7 +35,7 @@ app.get("/api/courses", async (req, res) => {
   }
 });
 
-app.get("/api/course/:id", async (req, res) => {
+app.get("/api/courses/:id", async (req, res) => {
   try {
     const course = await myCourse.model.findById(req.params.id);
     if (!course) {
@@ -57,7 +57,7 @@ app.post("/api/courses", async (req, res) => {
   }
 });
 
-app.put("/api/course/:id", async (req, res) => {
+app.put("/api/courses/:id", async (req, res) => {
   try {
     const updatedCourse = await myCourse.model.findByIdAndUpdate(
       req.params.id,
@@ -73,7 +73,7 @@ app.put("/api/course/:id", async (req, res) => {
   }
 });
 
-app.delete("/api/course/:id", async (req, res) => {
+app.delete("/api/courses/:id", async (req, res) => {
   try {
     const deletedCourse = await myCourse.model.findByIdAndDelete(req.params.id);
     if (!deletedCourse) {
