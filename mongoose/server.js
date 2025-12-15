@@ -73,6 +73,18 @@ app.put("/api/course/:id", async (req, res) => {
   }
 });
 
+app.delete("/api/course/:id", async (req, res) => {
+  try {
+    const deletedCourse = await myCourse.model.findByIdAndDelete(req.params.id);
+    if (!deletedCourse) {
+      return res.status(404).json({ error: "Course not found" });
+    }
+    res.json({ message: "Course deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
