@@ -46,7 +46,7 @@ export default function Form() {
                   id="courseDuration"
                   name="courseDuration"
                   value={courseDuration}
-                  onChange={(e) => setCourseDuration(e.target.value.trim())}
+                  onChange={(e) => setCourseDuration(e.target.value)}
                 />
               </td>
             </tr>
